@@ -1,0 +1,66 @@
+
+     Program FERMI_VELOCITY v.7.1 starts on 31May2026 at 22:14:18 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on       7 processor cores
+     Number of MPI processes:                 7
+     Threads/MPI process:                     1
+
+     MPI processes distributed on     7 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       7
+     223985 MiB available memory on the printing compute node when the environment starts
+ 
+     Waiting for input...
+     Reading input from standard input
+Warning: card &IONS ignored
+Warning: card  ION_DYNAMICS = 'BFGS' ignored
+Warning: card  UPSCALE = 1.0 ignored
+Warning: card / ignored
+Warning: card &CELL ignored
+Warning: card / ignored
+Warning: card / ignored
+
+     Reading xml data from directory:
+
+     ./data/scf.save/
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= PBE
+                           (   1   4   3   4   0   0   0)
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+ 
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min         227      89     32                 5733     1428     310
+     Max         228      90     34                 5735     1430     311
+     Sum        1595     627    229                40143    10005    2171
+ 
+     Using Slab Decomposition
+ 
+ 
+     Number of bands :      10
+     Number of k times spin :     752
+     Number of symmetries :      48
+     Lowest band which contains FS :       5
+     Highest band which contains FS :       5
+     Max :         1.21031335     Min :         0.00000000
+ 
+     FERMI_VELOCI :      0.64s CPU      0.78s WALL
+
+ 
+   This run was terminated on:  22:14:18  31May2026            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

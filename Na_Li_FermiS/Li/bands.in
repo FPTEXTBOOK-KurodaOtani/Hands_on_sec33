@@ -1,0 +1,5 @@
+&BANDS
+  prefix = 'scf'
+  outdir = './data'
+  filband = 'bccLi.bands.dat'
+/
