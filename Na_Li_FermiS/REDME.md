@@ -1,4 +1,3 @@
-Below is a README-style Markdown draft in English.
 
 # BCC Li and Na Band Structure and Fermi Surface Calculation with Quantum ESPRESSO
 
