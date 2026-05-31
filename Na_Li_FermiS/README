@@ -1,694 +1,111 @@
-Last login: Sun May 31 18:55:51 on ttys004
-(base) kurodafumiakira@kurodafiranoAir ~ % cd /Users/kurodafumiakira/QE_HANDSON_matome_sub
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls
-band_plot.py		bccLi.bands.dat.gnu	fermisurfer-2.4.0
-bcc_band.pdf		FERMI_SURFER_MEMO	vfermi.frmsf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi plot.gp
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi plot.gp     
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi plot.gp 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % :q
-zsh: command not found: :q
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi plot.gp     
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi plot.gp     
 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % gnu;lot plot.gp
-zsh: command not found: gnu
-zsh: command not found: lot
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % gnuplot plot.gp
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls
-band_plot.py		bcc_band.pdf		bccLi.bands.dat.gnu	FERMI_SURFER_MEMO	fermisurfer-2.4.0	plot.gp			vfermi.frmsf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % open bcc_band.pdf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li/bccLi.bands.dat.gnu  .
-bccLi.bands.dat.gnu                                                                                                                                                                         100%   20KB 122.3KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % gnuplot plot.gp                                                                               
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % open bcc_band.pdf                                                                             
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python3 band_plot.py 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python3 band_plot.py
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li/bccLi.bands.dat.gnu  .
-bccLi.bands.dat.gnu                                                                                                                                                                         100%   41KB 217.4KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python3 band_plot.py                                                                     
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py                                                                          
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li/bccLi.bands.dat.gnu  .
-bccLi.bands.dat.gnu                                                                                                                                                                         100%  642     6.8KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python3 band_plot.py                                                                          
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li/bccLi.bands.dat.gnu  .
-bccLi.bands.dat.gnu                                                                                                                                                                         100%   20KB 155.7KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python3 band_plot.py                                                                          
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py     
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python3 band_plot.py
-Traceback (most recent call last):
-  File "/Users/kurodafumiakira/QE_HANDSON_matome_sub/band_plot.py", line 22, in <module>
-    plt.plot(x[s:t], e[s:t], linewidth=1.2,linecolor="black")
-  File "/Users/kurodafumiakira/miniconda3/lib/python3.12/site-packages/matplotlib/pyplot.py", line 3829, in plot
-    return gca().plot(
-           ^^^^^^^^^^^
-  File "/Users/kurodafumiakira/miniconda3/lib/python3.12/site-packages/matplotlib/axes/_axes.py", line 1777, in plot
-    lines = [*self._get_lines(self, *args, data=data, **kwargs)]
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/kurodafumiakira/miniconda3/lib/python3.12/site-packages/matplotlib/axes/_base.py", line 297, in __call__
-    yield from self._plot_args(
-               ^^^^^^^^^^^^^^^^
-  File "/Users/kurodafumiakira/miniconda3/lib/python3.12/site-packages/matplotlib/axes/_base.py", line 546, in _plot_args
-    return [l[0] for l in result]
-                          ^^^^^^
-  File "/Users/kurodafumiakira/miniconda3/lib/python3.12/site-packages/matplotlib/axes/_base.py", line 539, in <genexpr>
-    result = (make_artist(axes, x[:, j % ncx], y[:, j % ncy], kw,
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/kurodafumiakira/miniconda3/lib/python3.12/site-packages/matplotlib/axes/_base.py", line 338, in _make_line
-    seg = mlines.Line2D(x, y, **kw)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/kurodafumiakira/miniconda3/lib/python3.12/site-packages/matplotlib/lines.py", line 407, in __init__
-    self._internal_update(kwargs)
-  File "/Users/kurodafumiakira/miniconda3/lib/python3.12/site-packages/matplotlib/artist.py", line 1233, in _internal_update
-    return self._update_props(
-           ^^^^^^^^^^^^^^^^^^^
-  File "/Users/kurodafumiakira/miniconda3/lib/python3.12/site-packages/matplotlib/artist.py", line 1206, in _update_props
-    raise AttributeError(
-AttributeError: Line2D.set() got an unexpected keyword argument 'linecolor'
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py     
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python3 band_plot.py
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python3 band_plot.py
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li/bccLi.bands.dat.gnu  .
-bccLi.bands.dat.gnu                                                                                                                                                                         100%   20KB 134.9KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py                                                                
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python3 band_plot.py                                                                          
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls                                                                                            
-band_plot.py		bcc_band.pdf		bccLi.bands.dat.gnu	FERMI_SURFER_MEMO	fermisurfer-2.4.0	plot.gp			vfermi.frmsf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % bc -l 
->>> 3.435/2
-1.71750000000000000000
->>> quit
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li/bccLi.bands.dat.gnu  .
-bccLi.bands.dat.gnu                                                                                                                                                                         100%   20KB 134.5KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py                                                                          
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % bc -l                                                                                         
->>> 3.5107/2
-1.75535000000000000000
->>> quit
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li/bccLi.bands.dat.gnu  .
-bccLi.bands.dat.gnu                                                                                                                                                                         100%   20KB 152.4KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py                                                                           
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py                                                                           
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls                                                                                  
-band_plot.py		bcc_band.pdf		bccLi.bands.dat.gnu	FERMI_SURFER_MEMO	fermisurfer-2.4.0	plot.gp			vfermi.frmsf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % rm bccLi.bands.dat.gnu
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li/bccLi.bands.dat.gnu . 
-bccLi.bands.dat.gnu                                                                                                                                                                         100%   20KB 167.2KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py                                                                          
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % rm bccLi.bands.dat.gnu 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls
-band_plot.py		bcc_band.pdf		FERMI_SURFER_MEMO	fermisurfer-2.4.0	plot.gp			vfermi.frmsf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li/bccLi.bands.dat.gnu .
-bccLi.bands.dat.gnu                                                                                                                                                                         100%  118KB 231.9KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py                                                                          
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py                                                                          
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li/bccLi.bands.dat.gnu .
-bccLi.bands.dat.gnu                                                                                                                                                                         100%  118KB 409.4KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py                                                                          
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py                                                                      
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % bc -l
->>> 3.435/2
-1.71750000000000000000
->>> quit
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li/bccLi.bands.dat.gnu .
-bccLi.bands.dat.gnu                                                                                                                                                                         100%  118KB 373.3KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py                                                                      
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls
-band_plot.py		bcc_band.pdf		bccLi.bands.dat.gnu	FERMI_SURFER_MEMO	fermisurfer-2.4.0	plot.gp			vfermi.frmsf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li/bccLi.bands.dat.gnu .
-bccLi.bands.dat.gnu                                                                                                                                                                         100%  118KB 394.2KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py                                                                          
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls
-band_plot.py		bcc_band.pdf		bccLi.bands.dat.gnu	FERMI_SURFER_MEMO	fermisurfer-2.4.0	plot.gp			vfermi.frmsf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li_2/bccLi.bands.dat.gnu .
-bccLi.bands.dat.gnu                                                                                                                                                                         100%  118KB 370.9KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py                                                                            
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li_2/vfermi.frmsf .       
-vfermi.frmsf                                                                                                                                                                                100% 2000KB   2.0MB/s   00:01    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls                                                                                          
-band_plot.py		bcc_band.pdf		bccLi.bands.dat.gnu	FERMI_SURFER_MEMO	fermisurfer-2.4.0	plot.gp			vfermi.frmsf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ./fermisurfer-2.4.0/src/fermisurfer vfermi.frmsf 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py                                                                         
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py                                                                            
-Traceback (most recent call last):
-  File "/Users/kurodafumiakira/QE_HANDSON_matome_sub/band_plot.py", line 18, in <module>
-    data = np.loadtxt(band_file)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/kurodafumiakira/miniconda3/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 1395, in loadtxt
-    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/kurodafumiakira/miniconda3/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 1022, in _read
-    fh = np.lib._datasource.open(fname, 'rt', encoding=encoding)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/kurodafumiakira/miniconda3/lib/python3.12/site-packages/numpy/lib/_datasource.py", line 192, in open
-    return ds.open(path, mode, encoding=encoding, newline=newline)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/kurodafumiakira/miniconda3/lib/python3.12/site-packages/numpy/lib/_datasource.py", line 529, in open
-    raise FileNotFoundError(f"{path} not found.")
-FileNotFoundError: bcc.bands.dat.gnu not found.
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls
-band_plot.py		bcc_band.pdf		bccLi.bands.dat.gnu	FERMI_SURFER_MEMO	fermisurfer-2.4.0	plot.gp			vfermi.frmsf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls             
-band_plot.py		bcc_band.pdf		bccLi.bands.dat.gnu	FERMI_SURFER_MEMO	fermisurfer-2.4.0	plot.gp			vfermi.frmsf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi bccLi.bands.dat.gnu
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py       
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py   
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % cp band_plot.py _band_plot.py
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py              
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py          
-Traceback (most recent call last):
-  File "/Users/kurodafumiakira/QE_HANDSON_matome_sub/band_plot.py", line 6, in <module>
-    data = np.loadtxt("bcc.bands.dat.gnu")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/kurodafumiakira/miniconda3/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 1395, in loadtxt
-    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/kurodafumiakira/miniconda3/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 1022, in _read
-    fh = np.lib._datasource.open(fname, 'rt', encoding=encoding)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/kurodafumiakira/miniconda3/lib/python3.12/site-packages/numpy/lib/_datasource.py", line 192, in open
-    return ds.open(path, mode, encoding=encoding, newline=newline)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/kurodafumiakira/miniconda3/lib/python3.12/site-packages/numpy/lib/_datasource.py", line 529, in open
-    raise FileNotFoundError(f"{path} not found.")
-FileNotFoundError: bcc.bands.dat.gnu not found.
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls                 
-_band_plot.py		band_plot.py		bcc_band.pdf		bcc_Li_band.pdf		bccLi.bands.dat.gnu	FERMI_SURFER_MEMO	fermisurfer-2.4.0	plot.gp			vfermi.frmsf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py
-Traceback (most recent call last):
-  File "/Users/kurodafumiakira/QE_HANDSON_matome_sub/band_plot.py", line 34, in <module>
-    ax.set_xticks(k_nodes)
-    ^^
-NameError: name 'ax' is not defined. Did you mean: 'x'?
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py
-Traceback (most recent call last):
-  File "/Users/kurodafumiakira/QE_HANDSON_matome_sub/band_plot.py", line 25, in <module>
-    ax.ylabel(r"$E - E_F$ (eV)")
-    ^^^^^^^^^
-AttributeError: 'Axes' object has no attribute 'ylabel'. Did you mean: '_label'?
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi bccLi.bands.dat.gnu
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py       
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi bccLi.bands.dat.gnu
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py   
-Traceback (most recent call last):
-  File "/Users/kurodafumiakira/QE_HANDSON_matome_sub/band_plot.py", line 38, in <module>
-    for k in k_nodes:
-             ^^^^^^^
-NameError: name 'k_nodes' is not defined
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi bccLi.bands.dat.gnu
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py       
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py   
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls
-_band_plot.py		band_plot.py		bcc_band.pdf		bcc_Li_band.pdf		bccLi.bands.dat.gnu	FERMI_SURFER_MEMO	fermisurfer-2.4.0	plot.gp			vfermi.frmsf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % gnuplot plot.gp
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls   
-_band_plot.py		band_plot.py		bcc_band.pdf		bcc_Li_band.pdf		bccLi.bands.dat.gnu	FERMI_SURFER_MEMO	fermisurfer-2.4.0	plot.gp			vfermi.frmsf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi plot.gp
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % open bcc_band.pdf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li_2/bccLi.bands.dat.gnu .
-bccLi.bands.dat.gnu                                                                                                                                                                         100%  118KB 393.6KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py                                                                            
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li/bccLi.bands.dat.gnu . 
-bccLi.bands.dat.gnu                                                                                                                                                                         100%  118KB 388.8KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py                                                                          
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls
-_band_plot.py		band_plot.py		bcc_band.pdf		bcc_Li_band.pdf		bccLi.bands.dat.gnu	FERMI_SURFER_MEMO	fermisurfer-2.4.0	plot.gp			vfermi.frmsf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li/bccLi.bands.dat.gnu .
-bccLi.bands.dat.gnu                                                                                                                                                                         100%  118KB 275.2KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li_2/bccLi.bands.dat.gnu .
-bccLi.bands.dat.gnu                                                                                                                                                                         100%  118KB 408.5KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py                                                                            
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li_2/li.bands.ps   .      
-li.bands.ps                                                                                                                                                                                 100%  280KB 729.4KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % open li.bands.ps
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li_2/li.bands.pdf   .
-li.bands.pdf                                                                                                                                                                                100%  280KB 758.8KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % open li.bands.ps                                                                         
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % open li.bands.pdf 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py                                                                            
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls 
-_band_plot.py		bcc_band.pdf		bccLi.bands.dat.gnu	fermisurfer-2.4.0	li.bands.ps		vfermi.frmsf
-band_plot.py		bcc_Li_band.pdf		FERMI_SURFER_MEMO	li.bands.pdf		plot.gp
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi plot.gp 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li_2/li.bands.pdf   .
-scp: /home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li_2/li.bands.pdf: No such file or directory
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li_2/bccLi.bands.dat.gnu   .
-bccLi.bands.dat.gnu                                                                                                                                                                         100%  197KB 567.7KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python band_plot.py                                                                          
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls
-_band_plot.py		bcc_band.pdf		bccLi.bands.dat.gnu	fermisurfer-2.4.0	li.bands.ps		vfermi.frmsf
-band_plot.py		bcc_Li_band.pdf		FERMI_SURFER_MEMO	li.bands.pdf		plot.gp
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % cd ..
-(base) kurodafumiakira@kurodafiranoAir ~ % ls
-DB.png							main.pdf						plot_1.py
-Desktop							main.toc						PROGRAM
-Documents						miniconda3						Public
-Downloads						Miniconda3-latest-MacOSX-arm64.sh			PYTHON
-GITHUB							Movies							QE_HANDSON_matome_sub
-iCloud Drive（アーカイブ）				MPT.png							Sites
-Library							MRS-J_2025_Kuroda.pdf					スクリーンショット 2025-07-08 18.05.48.png
-main.aux						Music							スクリーンショット 2025-07-17 19.05.20.png
-main.log						out.pdf
-main.out						Pictures
-(base) kurodafumiakira@kurodafiranoAir ~ % cd QE_HANDSON_matome_sub
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls
-_band_plot.py		bcc_band.pdf		bccLi.bands.dat.gnu	fermisurfer-2.4.0	li.bands.ps		vfermi.frmsf
-band_plot.py		bcc_Li_band.pdf		FERMI_SURFER_MEMO	li.bands.pdf		plot.gp
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Na/vfermi.frmsf   .         
-vfermi.frmsf                                                                                                                                                                                100%  844KB   1.2MB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls                                                                                        
-_band_plot.py		bcc_band.pdf		bccLi.bands.dat.gnu	fermisurfer-2.4.0	li.bands.ps		vfermi.frmsf
-band_plot.py		bcc_Li_band.pdf		FERMI_SURFER_MEMO	li.bands.pdf		plot.gp
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ./fermisurfer-2.4.0/src/fermisurfer vfermi.frmsf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Na/bccNa.bands.dat.gnu   .
-bccNa.bands.dat.gnu                                                                                                                                                                         100%  177KB 492.7KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls
-_band_plot.py		bcc_band.pdf		bccLi.bands.dat.gnu	FERMI_SURFER_MEMO	li.bands.pdf		plot.gp
-band_plot.py		bcc_Li_band.pdf		bccNa.bands.dat.gnu	fermisurfer-2.4.0	li.bands.ps		vfermi.frmsf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % cp -r band_plot.py ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li/
-cp: directory ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li does not exist
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r band_plot.py ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Li/
-band_plot.py                                                                                                                                                                                100% 1004    20.4KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls
-_band_plot.py		bcc_band.pdf		bccLi.bands.dat.gnu	FERMI_SURFER_MEMO	li.bands.pdf		plot.gp
-band_plot.py		bcc_Li_band.pdf		bccNa.bands.dat.gnu	fermisurfer-2.4.0	li.bands.ps		vfermi.frmsf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi plot.gp 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python3 band_plot.py
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % vi band_plot.py     
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python3 band_plot.py
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls
-_band_plot.py		bcc_band.pdf		bccLi.bands.dat.gnu	FERMI_SURFER_MEMO	li.bands.pdf		plot.gp
-band_plot.py		bcc_Li_band.pdf		bccNa.bands.dat.gnu	fermisurfer-2.4.0	li.bands.ps		vfermi.frmsf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Na/bccNa.bands.dat.gnu   .
-bccNa.bands.dat.gnu                                                                                                                                                                         100%  197KB 553.4KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python3 band_plot.py                                                                           
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Na/bccNa.bands.dat.gnu   .
-bccNa.bands.dat.gnu                                                                                                                                                                         100%  394KB 853.3KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % python3 band_plot.py                                                                           
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r band_plot.py ohataka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Na/
-ssh: Could not resolve hostname ohataka3: nodename nor servname provided, or not known
-scp: Connection closed
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r band_plot.py ohtaka:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Na/
-çCCcçcccc^C%                                                                                                                                                                                                                  (base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % scp -r band_plot.py ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS/Na/
-band_plot.py                                                                                                                                                                                100% 1004    17.2KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % ls
-_band_plot.py		bcc_band.pdf		bccLi.bands.dat.gnu	FERMI_SURFER_MEMO	li.bands.pdf		plot.gp
-band_plot.py		bcc_Li_band.pdf		bccNa.bands.dat.gnu	fermisurfer-2.4.0	li.bands.ps		vfermi.frmsf
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome_sub % cd ..
-(base) kurodafumiakira@kurodafiranoAir ~ % ls
-DB.png							main.pdf						plot_1.py
-Desktop							main.toc						PROGRAM
-Documents						miniconda3						Public
-Downloads						Miniconda3-latest-MacOSX-arm64.sh			PYTHON
-GITHUB							Movies							QE_HANDSON_matome_sub
-iCloud Drive（アーカイブ）				MPT.png							Sites
-Library							MRS-J_2025_Kuroda.pdf					スクリーンショット 2025-07-08 18.05.48.png
-main.aux						Music							スクリーンショット 2025-07-17 19.05.20.png
-main.log						out.pdf
-main.out						Pictures
-(base) kurodafumiakira@kurodafiranoAir ~ % cd GITHUB 
-(base) kurodafumiakira@kurodafiranoAir GITHUB % ls
-BCP		DFT_TEXT_BOOK	FPTEXTBOOK	HiLAPW
-(base) kurodafumiakira@kurodafiranoAir GITHUB % cd ..
-(base) kurodafumiakira@kurodafiranoAir ~ % ls
-DB.png							main.pdf						plot_1.py
-Desktop							main.toc						PROGRAM
-Documents						miniconda3						Public
-Downloads						Miniconda3-latest-MacOSX-arm64.sh			PYTHON
-GITHUB							Movies							QE_HANDSON_matome_sub
-iCloud Drive（アーカイブ）				MPT.png							Sites
-Library							MRS-J_2025_Kuroda.pdf					スクリーンショット 2025-07-08 18.05.48.png
-main.aux						Music							スクリーンショット 2025-07-17 19.05.20.png
-main.log						out.pdf
-main.out						Pictures
-(base) kurodafumiakira@kurodafiranoAir ~ % mkdir QE_HANDSON_matome
-(base) kurodafumiakira@kurodafiranoAir ~ % ls
-DB.png							main.pdf						plot_1.py
-Desktop							main.toc						PROGRAM
-Documents						miniconda3						Public
-Downloads						Miniconda3-latest-MacOSX-arm64.sh			PYTHON
-GITHUB							Movies							QE_HANDSON_matome
-iCloud Drive（アーカイブ）				MPT.png							QE_HANDSON_matome_sub
-Library							MRS-J_2025_Kuroda.pdf					Sites
-main.aux						Music							スクリーンショット 2025-07-08 18.05.48.png
-main.log						out.pdf							スクリーンショット 2025-07-17 19.05.20.png
-main.out						Pictures
-(base) kurodafumiakira@kurodafiranoAir ~ % cd QE_HANDSON_matome
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome % ls
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome % cp -rf ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS .
-cp: ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS: No such file or directory
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome % scp -rf ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS .
-çCCCC^C
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome % 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome % ls
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome % scp -r ohtaka3:/home/k0750/k075000/QE/QE_HANDSON_matome/Na_Li_FermiS . 
-pw_BCC_Li_NSCF.in                                                                                                                                                                           100%  682     6.6KB/s   00:00    
-bands.in                                                                                                                                                                                    100%   76     0.8KB/s   00:00    
-bccLi.bands.dat.gnu                                                                                                                                                                         100%  197KB 539.4KB/s   00:00    
-pw_BCC_Li_NSCF.out                                                                                                                                                                          100% 7995    83.0KB/s   00:00    
-pw_BCC_Li_SCF.out                                                                                                                                                                           100%   12KB 114.9KB/s   00:00    
-bccLi.bands.dat.rap                                                                                                                                                                         100%  119KB 477.2KB/s   00:00    
-pw_BCC_Li_BAND.out                                                                                                                                                                          100% 7129    63.5KB/s   00:00    
-bands.out                                                                                                                                                                                   100%  783KB   1.5MB/s   00:00    
-vfermi.frmsf                                                                                                                                                                                100% 2000KB   2.6MB/s   00:00    
-bccLi.bands.dat                                                                                                                                                                             100%  124KB 539.5KB/s   00:00    
-pw_BCC_Li_NSCF_fermiv.out                                                                                                                                                                   100% 2461    17.3KB/s   00:00    
-plotbands.in                                                                                                                                                                                100%   83     0.8KB/s   00:00    
-run.sh                                                                                                                                                                                      100%  443     3.1KB/s   00:00    
-band_plot.py                                                                                                                                                                                100% 1004    10.7KB/s   00:00    
-run_qe0.sh                                                                                                                                                                                  100%  737     7.2KB/s   00:00    
-pw_BCC_Li_SCF.in                                                                                                                                                                            100%  680     7.1KB/s   00:00    
-pw_BCC_Li_BAND.in                                                                                                                                                                           100%  792     7.6KB/s   00:00    
-pw_BCC_Na_SCF.in                                                                                                                                                                            100%  737     7.2KB/s   00:00    
-pw_BCC_Na_BAND.in                                                                                                                                                                           100%  847     9.9KB/s   00:00    
-bands.in                                                                                                                                                                                    100%   76     0.7KB/s   00:00    
-pw_BCC_Na_NSCF_fermiv.out                                                                                                                                                                   100% 2461    21.3KB/s   00:00    
-bccNa.bands.dat.rap                                                                                                                                                                         100%  195KB 699.1KB/s   00:00    
-bccNa.bands.dat.gnu                                                                                                                                                                         100%  394KB   1.2MB/s   00:00    
-pw_BCC_Na_BAND.out                                                                                                                                                                          100% 7197    58.7KB/s   00:00    
-bands.out                                                                                                                                                                                   100% 1305KB   2.3MB/s   00:00    
-vfermi.frmsf                                                                                                                                                                                100%  844KB   1.9MB/s   00:00    
-bccNa.bands.dat                                                                                                                                                                             100%  209KB 810.7KB/s   00:00    
-pw_BCC_Na_NSCF.out                                                                                                                                                                          100% 7332    68.8KB/s   00:00    
-pw_BCC_Na_SCF.out                                                                                                                                                                           100%   10KB 111.4KB/s   00:00    
-pw_BCC_Na_NSCF.in                                                                                                                                                                           100%  738     7.1KB/s   00:00    
-run.sh                                                                                                                                                                                      100%  443     4.3KB/s   00:00    
-band_plot.py                                                                                                                                                                                100% 1004    12.1KB/s   00:00    
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome % ls
-Na_Li_FermiS
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome % cd Na_Li_FermiS
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % ls
-Li	Na
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % Li
-zsh: command not found: Li
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % ls
-Li	Na
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % cd Li
-(base) kurodafumiakira@kurodafiranoAir Li % ks
-zsh: command not found: ks
-(base) kurodafumiakira@kurodafiranoAir Li % ls 
-band_plot.py		bands.in		plotbands.in		pw_BCC_Li_BAND.in	pw_BCC_Li_NSCF.in	pw_BCC_Li_SCF.in	reference		run_qe0.sh		run.sh
-(base) kurodafumiakira@kurodafiranoAir Li % rm run_qe0.sh 
-(base) kurodafumiakira@kurodafiranoAir Li % vi run.sh
-(base) kurodafumiakira@kurodafiranoAir Li % cd ..
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % ls
-Li	Na
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % cd Na
-(base) kurodafumiakira@kurodafiranoAir Na % ls
-band_plot.py		bands.in		pw_BCC_Na_BAND.in	pw_BCC_Na_NSCF.in	pw_BCC_Na_SCF.in	reference		run.sh
-(base) kurodafumiakira@kurodafiranoAir Na % vi run.sh
-(base) kurodafumiakira@kurodafiranoAir Na % ls
-band_plot.py		bands.in		pw_BCC_Na_BAND.in	pw_BCC_Na_NSCF.in	pw_BCC_Na_SCF.in	reference		run.sh
-(base) kurodafumiakira@kurodafiranoAir Na % cd ..
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % ls
-Li	Na
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % vi Li/run.sh
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % cp Li/reference/vfermi.frmsf ../../Desktop 
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % vi REDME.md
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % open REDME.md
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % code REDME.md
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % code REDME.md
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % code REDME.md
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % vi REDME.md
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % ls
-Li		Na		REDME.md
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % ls
-Li		Na		REDME.md
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % cd Na
-(base) kurodafumiakira@kurodafiranoAir Na % ls
-band_plot.py		bands.in		pw_BCC_Na_BAND.in	pw_BCC_Na_NSCF.in	pw_BCC_Na_SCF.in	reference		run.sh
-(base) kurodafumiakira@kurodafiranoAir Na % vi run.sh
-(base) kurodafumiakira@kurodafiranoAir Na % ls
-band_plot.py		bands.in		pw_BCC_Na_BAND.in	pw_BCC_Na_NSCF.in	pw_BCC_Na_SCF.in	reference		run.sh
-(base) kurodafumiakira@kurodafiranoAir Na % cd ..
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % ls
-Li		Na		REDME.md
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % cd Li
-(base) kurodafumiakira@kurodafiranoAir Li % ls
-band_plot.py		bands.in		plotbands.in		pw_BCC_Li_BAND.in	pw_BCC_Li_NSCF.in	pw_BCC_Li_SCF.in	reference		run.sh
-(base) kurodafumiakira@kurodafiranoAir Li % vi run.sh
-(base) kurodafumiakira@kurodafiranoAir Li % ls
-band_plot.py		bands.in		plotbands.in		pw_BCC_Li_BAND.in	pw_BCC_Li_NSCF.in	pw_BCC_Li_SCF.in	reference		run.sh
-(base) kurodafumiakira@kurodafiranoAir Li % cd ..
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % ls
-Li		Na		REDME.md
-(base) kurodafumiakira@kurodafiranoAir Na_Li_FermiS % cd ..
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome % ls
-Na_Li_FermiS
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome % cp -rf Na_Li_FermiS ../GITHUB/FPTEXTBOOK/Hands_on_sec33 
-(base) kurodafumiakira@kurodafiranoAir QE_HANDSON_matome % cd ../GITHUB/FPTEXTBOOK/
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % ls
-Hands_on_sec31	Hands_on_sec32	Hands_on_sec33
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % cd ..
-(base) kurodafumiakira@kurodafiranoAir GITHUB % ls
-BCP		DFT_TEXT_BOOK	FPTEXTBOOK	HiLAPW
-(base) kurodafumiakira@kurodafiranoAir GITHUB % cd FPTEXTBOOK
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % git add *
-warning: adding embedded git repository: Hands_on_sec31
-hint: You've added another git repository inside your current repository.
-hint: Clones of the outer repository will not contain the contents of
-hint: the embedded repository and will not know how to obtain it.
-hint: If you meant to add a submodule, use:
-hint: 
-hint: 	git submodule add <url> Hands_on_sec31
-hint: 
-hint: If you added this path by mistake, you can remove it from the
-hint: index with:
-hint: 
-hint: 	git rm --cached Hands_on_sec31
-hint: 
-hint: See "git help submodule" for more information.
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % ls       
-Hands_on_sec31	Hands_on_sec32	Hands_on_sec33
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % git add *
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % ls
-Hands_on_sec31	Hands_on_sec32	Hands_on_sec33
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % git commit -m "update 2026/5/31"
-[main (root-commit) 3cefa37] update 2026/5/31
- 34 files changed, 265676 insertions(+)
- create mode 160000 Hands_on_sec31
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Li/band_plot.py
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Li/bands.in
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Li/plotbands.in
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Li/pw_BCC_Li_BAND.in
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Li/pw_BCC_Li_NSCF.in
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Li/pw_BCC_Li_SCF.in
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Li/reference/bands.out
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Li/reference/bccLi.bands.dat
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Li/reference/bccLi.bands.dat.gnu
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Li/reference/bccLi.bands.dat.rap
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Li/reference/pw_BCC_Li_BAND.out
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Li/reference/pw_BCC_Li_NSCF.out
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Li/reference/pw_BCC_Li_NSCF_fermiv.out
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Li/reference/pw_BCC_Li_SCF.out
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Li/reference/vfermi.frmsf
- create mode 100755 Hands_on_sec33/Na_Li_FermiS/Li/run.sh
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Na/band_plot.py
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Na/bands.in
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Na/pw_BCC_Na_BAND.in
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Na/pw_BCC_Na_NSCF.in
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Na/pw_BCC_Na_SCF.in
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Na/reference/bands.out
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Na/reference/bccNa.bands.dat
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Na/reference/bccNa.bands.dat.gnu
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Na/reference/bccNa.bands.dat.rap
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Na/reference/pw_BCC_Na_BAND.out
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Na/reference/pw_BCC_Na_NSCF.out
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Na/reference/pw_BCC_Na_NSCF_fermiv.out
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Na/reference/pw_BCC_Na_SCF.out
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Na/reference/slurm-2928509.out
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/Na/reference/vfermi.frmsf
- create mode 100755 Hands_on_sec33/Na_Li_FermiS/Na/run.sh
- create mode 100644 Hands_on_sec33/Na_Li_FermiS/REDME.md
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % git push
-fatal: No configured push destination.
-Either specify the URL from the command-line or configure a remote repository using
+# BCC Li and Na Band Structure and Fermi Surface Calculation with Quantum ESPRESSO
 
-    git remote add <name> <url>
+This directory contains input files and a shell script for calculating the electronic band structure and Fermi surface of BCC Li using Quantum ESPRESSO.
+The BCC Na also can be calculated using the same workflow.
 
-and then push using the remote name
 
-    git push <name>
+The workflow consists of:
 
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % git push                        
-fatal: No configured push destination.
-Either specify the URL from the command-line or configure a remote repository using
+1. SCF calculation
+2. Band-structure calculation along a high-symmetry k-path
+3. Band post-processing using `bands.x`
+4. NSCF calculation on a dense automatic k-point mesh
+5. Fermi-velocity file generation using `fermi_velocity.x`
+6. Visualization of `vfermi.frmsf` with FermiSurfer
 
-    git remote add <name> <url>
+Quantum ESPRESSO provides `fermi_velocity.x` to generate FermiSurfer input files from `pw.x` results, and the generated file is typically named `vfermi.frmsf`. ([Quantum Espresso][1])
 
-and then push using the remote name
+## Required Files
 
-    git push <name>
+Prepare the following input files:
 
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % ls      
-Hands_on_sec31	Hands_on_sec32	Hands_on_sec33
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % git push Hands_on_sec33
-fatal: The current branch main has no upstream branch.
-To push the current branch and set the remote as upstream, use
+```text
+pw_BCC_Li_SCF.in
+pw_BCC_Li_BAND.in
+bands.in
+pw_BCC_Li_NSCF.in
+```
 
-    git push --set-upstream Hands_on_sec33 main
+## Run Script
 
-To have this happen automatically for branches without a tracking
-upstream, see 'push.autoSetupRemote' in 'git help config'.
+Create a shell script, for example `run_BCC_Li.sh`.
 
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK %  git push --set-upstream Hands_on_sec33 main
-fatal: 'Hands_on_sec33' does not appear to be a git repository
-fatal: Could not read from remote repository.
+```bash
+#!/bin/bash
 
-Please make sure you have the correct access rights
-and the repository exists.
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % ls
-Hands_on_sec31	Hands_on_sec32	Hands_on_sec33
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % cd ..
-(base) kurodafumiakira@kurodafiranoAir GITHUB % ls
-BCP		DFT_TEXT_BOOK	FPTEXTBOOK	HiLAPW
-(base) kurodafumiakira@kurodafiranoAir GITHUB % mv FPTEXTBOOK __FPTEXTBOOK
-(base) kurodafumiakira@kurodafiranoAir GITHUB % ls
-__FPTEXTBOOK	BCP		DFT_TEXT_BOOK	HiLAPW
-(base) kurodafumiakira@kurodafiranoAir GITHUB % mv __FPTEXTBOOK FPTEXTBOOK 
-(base) kurodafumiakira@kurodafiranoAir GITHUB % cd FPTEXTBOOK
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % ls
-Hands_on_sec31	Hands_on_sec32	Hands_on_sec33
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % mv Hands_on_sec33 _Hands_on_sec33                           
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % ls
-_Hands_on_sec33	Hands_on_sec31	Hands_on_sec32
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % git clone git@github.com:FPTEXTBOOK-KurodaOtani/Hands_on_sec33.git
-Cloning into 'Hands_on_sec33'...
-Enter passphrase for key '/Users/kurodafumiakira/.ssh/id_ecdsa': 
-Enter passphrase for key '/Users/kurodafumiakira/.ssh/id_ecdsa': 
-Enter passphrase for key '/Users/kurodafumiakira/.ssh/id_ecdsa': 
-warning: You appear to have cloned an empty repository.
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % ls
-_Hands_on_sec33	Hands_on_sec31	Hands_on_sec32	Hands_on_sec33
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % mv _Hands_on_sec33/Na_Li_FermiS Hands_on_sec33/
-(base) kurodafumiakira@kurodafiranoAir FPTEXTBOOK % cd Hands_on_sec33
-(base) kurodafumiakira@kurodafiranoAir Hands_on_sec33 % ls
-Na_Li_FermiS
-(base) kurodafumiakira@kurodafiranoAir Hands_on_sec33 % git add *
-(base) kurodafumiakira@kurodafiranoAir Hands_on_sec33 % git commit -m "update 2026/5/31"            
-[main (root-commit) 3735ecb] update 2026/5/31
- 33 files changed, 265675 insertions(+)
- create mode 100644 Na_Li_FermiS/Li/band_plot.py
- create mode 100644 Na_Li_FermiS/Li/bands.in
- create mode 100644 Na_Li_FermiS/Li/plotbands.in
- create mode 100644 Na_Li_FermiS/Li/pw_BCC_Li_BAND.in
- create mode 100644 Na_Li_FermiS/Li/pw_BCC_Li_NSCF.in
- create mode 100644 Na_Li_FermiS/Li/pw_BCC_Li_SCF.in
- create mode 100644 Na_Li_FermiS/Li/reference/bands.out
- create mode 100644 Na_Li_FermiS/Li/reference/bccLi.bands.dat
- create mode 100644 Na_Li_FermiS/Li/reference/bccLi.bands.dat.gnu
- create mode 100644 Na_Li_FermiS/Li/reference/bccLi.bands.dat.rap
- create mode 100644 Na_Li_FermiS/Li/reference/pw_BCC_Li_BAND.out
- create mode 100644 Na_Li_FermiS/Li/reference/pw_BCC_Li_NSCF.out
- create mode 100644 Na_Li_FermiS/Li/reference/pw_BCC_Li_NSCF_fermiv.out
- create mode 100644 Na_Li_FermiS/Li/reference/pw_BCC_Li_SCF.out
- create mode 100644 Na_Li_FermiS/Li/reference/vfermi.frmsf
- create mode 100755 Na_Li_FermiS/Li/run.sh
- create mode 100644 Na_Li_FermiS/Na/band_plot.py
- create mode 100644 Na_Li_FermiS/Na/bands.in
- create mode 100644 Na_Li_FermiS/Na/pw_BCC_Na_BAND.in
- create mode 100644 Na_Li_FermiS/Na/pw_BCC_Na_NSCF.in
- create mode 100644 Na_Li_FermiS/Na/pw_BCC_Na_SCF.in
- create mode 100644 Na_Li_FermiS/Na/reference/bands.out
- create mode 100644 Na_Li_FermiS/Na/reference/bccNa.bands.dat
- create mode 100644 Na_Li_FermiS/Na/reference/bccNa.bands.dat.gnu
- create mode 100644 Na_Li_FermiS/Na/reference/bccNa.bands.dat.rap
- create mode 100644 Na_Li_FermiS/Na/reference/pw_BCC_Na_BAND.out
- create mode 100644 Na_Li_FermiS/Na/reference/pw_BCC_Na_NSCF.out
- create mode 100644 Na_Li_FermiS/Na/reference/pw_BCC_Na_NSCF_fermiv.out
- create mode 100644 Na_Li_FermiS/Na/reference/pw_BCC_Na_SCF.out
- create mode 100644 Na_Li_FermiS/Na/reference/slurm-2928509.out
- create mode 100644 Na_Li_FermiS/Na/reference/vfermi.frmsf
- create mode 100755 Na_Li_FermiS/Na/run.sh
- create mode 100644 Na_Li_FermiS/REDME.md
-(base) kurodafumiakira@kurodafiranoAir Hands_on_sec33 % git push                                          
-Enter passphrase for key '/Users/kurodafumiakira/.ssh/id_ecdsa': 
-Enumerating objects: 40, done.
-Counting objects: 100% (40/40), done.
-Delta compression using up to 10 threads
-Compressing objects: 100% (38/38), done.
-Writing objects: 100% (40/40), 908.70 KiB | 3.95 MiB/s, done.
-Total 40 (delta 14), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (14/14), done.
-To github.com:FPTEXTBOOK-KurodaOtani/Hands_on_sec33.git
- * [new branch]      main -> main
-(base) kurodafumiakira@kurodafiranoAir Hands_on_sec33 % ls
-Na_Li_FermiS
-(base) kurodafumiakira@kurodafiranoAir Hands_on_sec33 % vi Na_Li_FermiS/REDME.md 
-(base) kurodafumiakira@kurodafiranoAir Hands_on_sec33 % cp  Na_Li_FermiS/REDME.md Na_Li_FermiS/REDME
-(base) kurodafumiakira@kurodafiranoAir Hands_on_sec33 % git add *                                   
-(base) kurodafumiakira@kurodafiranoAir Hands_on_sec33 % git commit -m "update 2026/5/31"            
-[main 899f0ba] update 2026/5/31
- 2 files changed, 175 insertions(+), 1 deletion(-)
- create mode 100644 Na_Li_FermiS/REDME
-(base) kurodafumiakira@kurodafiranoAir Hands_on_sec33 % git push                                    
-Enter passphrase for key '/Users/kurodafumiakira/.ssh/id_ecdsa': 
-Enter passphrase for key '/Users/kurodafumiakira/.ssh/id_ecdsa': 
-To github.com:FPTEXTBOOK-KurodaOtani/Hands_on_sec33.git
- ! [rejected]        main -> main (fetch first)
-error: failed to push some refs to 'github.com:FPTEXTBOOK-KurodaOtani/Hands_on_sec33.git'
-hint: Updates were rejected because the remote contains work that you do
-hint: not have locally. This is usually caused by another repository pushing
-hint: to the same ref. You may want to first integrate the remote changes
-hint: (e.g., 'git pull ...') before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-(base) kurodafumiakira@kurodafiranoAir Hands_on_sec33 % git add *                       
-(base) kurodafumiakira@kurodafiranoAir Hands_on_sec33 % git commit -m "new update 2026/5/31"
-On branch main
-Your branch is ahead of 'origin/main' by 1 commit.
-  (use "git push" to publish your local commits)
+# Quantum ESPRESSO executable directory
+QEBIN="/yourdir/espresso-7.1-1/bin"
 
-nothing to commit, working tree clean
-(base) kurodafumiakira@kurodafiranoAir Hands_on_sec33 % git push                                    
-Enter passphrase for key '/Users/kurodafumiakira/.ssh/id_ecdsa': 
-To github.com:FPTEXTBOOK-KurodaOtani/Hands_on_sec33.git
- ! [rejected]        main -> main (fetch first)
-error: failed to push some refs to 'github.com:FPTEXTBOOK-KurodaOtani/Hands_on_sec33.git'
-hint: Updates were rejected because the remote contains work that you do
-hint: not have locally. This is usually caused by another repository pushing
-hint: to the same ref. You may want to first integrate the remote changes
-hint: (e.g., 'git pull ...') before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-(base) kurodafumiakira@kurodafiranoAir Hands_on_sec33 % ls
-Na_Li_FermiS
-(base) kurodafumiakira@kurodafiranoAir Hands_on_sec33 % vi Na_Li_FermiS/REDME.md 
+# =========================
+# 1. SCF calculation
+# =========================
+$QEBIN/pw.x < pw_BCC_Li_SCF.in > pw_BCC_Li_SCF.out
 
+# =========================
+# 2. Band calculation
+# =========================
+# Calculate eigenvalues along the high-symmetry k-path.
+$QEBIN/pw.x < pw_BCC_Li_BAND.in > pw_BCC_Li_BAND.out
+
+# =========================
+# 3. Band post-processing
+# =========================
+# This generates band data files such as *.dat and *.gnu.
+$QEBIN/bands.x < bands.in > bands.out
+
+
+# =========================
+# 4. NSCF calculation for Fermi-surface analysis
+# =========================
+# The NSCF calculation should be performed using an automatic dense k-point mesh.
+$QEBIN/pw.x < pw_BCC_Li_NSCF.in > pw_BCC_Li_NSCF.out
+
+# =========================
+# 5. Generate Fermi velocity file for FermiSurfer
+# =========================
+# This creates vfermi.frmsf.
+$QEBIN/fermi_velocity.x -in pw_BCC_Li_NSCF.in > pw_BCC_Li_NSCF_fermiv.out
+```
+
+Run it with:
+
+```bash
+bash run_BCC_Li.sh
+```
+
+or submit it through your SLURM job script.
+
+## Important Notes
+
+The `SCF` calculation determines the self-consistent charge density.
+
+The `BAND` calculation uses the SCF charge density and calculates eigenvalues along the selected high-symmetry path.
+
+The `bands.x` post-processing step reads the band calculation results and generates files for plotting the band structure.
+
+The `NSCF` calculation for Fermi-surface visualization should use a dense `K_POINTS automatic` mesh, not the line-mode k-path used for the band plot. QE documentation states that `fermi_velocity.x` should be used after a `pw.x` calculation with automatic k-points. ([Quantum Espresso][1])
+
+For `fermi_velocity.x`, the number of k-point parallelization pools should be 1 or unspecified. The FermiSurfer tutorial also shows execution with `-npool 1` and states that `vfermi.frmsf` is generated afterward. ([mitsuaki1987.github.io][2])
+
+## Band Plot
+
+After running:
+
+```bash
+$QEBIN/bands.x < bands.in > bands.out
+```
+
+the band data can be plotted using gnuplot or Python. For example, `bands.x` may generate a file such as:
+
+```text
+Li.bands.dat.gnu
+```
+
+This file can be used directly for band plotting.
+It can be plotted by using band_plot.py.
+
+## Fermi Surface Plot with FermiSurfer
 
 After running:
 
@@ -755,3 +172,4 @@ Open this file with FermiSurfer to visualize the BCC Li Fermi surface.
 [2]: https://mitsuaki1987.github.io/fermisurfer/en/_build/html/qe.html "Tutorial with Quantum ESPRESSO — fermisurfer 2.4.0 documentation"
 [3]: https://mitsuaki1987.github.io/fermisurfer/ "FermiSurfer Web page"
 [4]: https://mitsuaki1987.github.io/fermisurfer/en/_build/html/onweb.html "FermiSurfer on Web — fermisurfer 2.4.0 documentation"
+
