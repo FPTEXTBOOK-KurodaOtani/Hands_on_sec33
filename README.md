@@ -6,6 +6,72 @@ The purpose of this hands-on section is to practice basic QE calculations and to
 
 For the detailed procedure of each exercise, please refer to the `README.md` file and `run.sh` script in each subdirectory.
 
+## References and required programs
+
+Before running the calculations, please install Quantum ESPRESSO and prepare the external programs required for some exercises.
+
+### Quantum ESPRESSO installation and compilation
+
+Quantum ESPRESSO can be downloaded and compiled by following the official documentation.
+
+Useful references are:
+
+- Quantum ESPRESSO official web page:  
+  https://www.quantum-espresso.org/
+- Quantum ESPRESSO installation guide:  
+  https://www.quantum-espresso.org/Doc/user_guide/node7.html
+- Quantum ESPRESSO installation FAQ:  
+  https://www.quantum-espresso.org/faq/installation/
+
+The installation guide explains download, required libraries, CMake-based compilation, `make`-based compilation, MPI setup, BLAS/LAPACK, FFT libraries, and related build options.
+
+### Quantum ESPRESSO input-variable documentation
+
+The QE input files in this hands-on section mainly use the following executables:
+
+```text
+pw.x
+pp.x
+projwfc.x
+```
+
+The input variables for these programs are described in the official QE documentation:
+
+- `pw.x` input variables:  
+  https://www.quantum-espresso.org/Doc/INPUT_PW.html
+- `pp.x` input variables:  
+  https://www.quantum-espresso.org/Doc/INPUT_PP.html
+- `projwfc.x` input variables:  
+  https://www.quantum-espresso.org/Doc/INPUT_PROJWFC.html
+
+Please refer to these pages when you want to check the meaning of variables in `pw_**.in`, post-processing input files, or projected-DOS input files.
+
+### FermiSurfer
+
+Some exercises may use FermiSurfer to visualize Fermi surfaces.
+
+Useful references are:
+
+- FermiSurfer official page:  
+  https://mitsuaki1987.github.io/fermisurfer/
+- FermiSurfer documentation page:  
+  https://mitsuaki1987.github.io/fermisurfer/html/index.html
+
+FermiSurfer is a visualization tool for Fermi surfaces and can color the Fermi surface using quantities such as Fermi velocity or other band-dependent scalar quantities.
+
+### Bader charge analysis
+
+Some exercises use Bader charge analysis.
+
+Useful references are:
+
+- Bader charge analysis program:  
+  https://theory.cm.utexas.edu/bader/
+- Henkelman group Bader analysis page:  
+  https://theory.cm.utexas.edu/henkelman/research/bader/
+
+The Bader program reads charge-density files, such as Gaussian CUBE files, and outputs the charge associated with each atom and the Bader volumes.
+
 ## Pseudopotential files
 
 QE input files require pseudopotential files.
@@ -48,23 +114,29 @@ pseudo_dir = '/home/user/Hands_on_sec33/PSPOT'
 
 ## Replacing `/yourdir/PSPOT`
 
-On Linux, you can replace `/yourdir/PSPOT` in all `pw_*.in` files under the current directory using:
+The string `/yourdir/PSPOT` in the QE input files should be replaced by the actual absolute path to the `PSPOT` directory.
 
-```bash
-find . -type f -name "pw_*.in" -exec sed -i "s|/yourdir/PSPOT|$(pwd)/PSPOT|g" {} \;
+For example, if the absolute path of this directory is:
+
+```text
+/home/user/Hands_on_sec33
 ```
 
-On macOS, use:
+then replace:
 
-```bash
-find . -type f -name "pw_*.in" -exec sed -i '' "s|/yourdir/PSPOT|$(pwd)/PSPOT|g" {} \;
+```fortran
+pseudo_dir = '/yourdir/PSPOT'
 ```
 
-After replacement, check that the path was correctly set:
+with:
 
-```bash
-grep -r "pseudo_dir" .
+```fortran
+pseudo_dir = '/home/user/Hands_on_sec33/PSPOT'
 ```
+
+This replacement can be done manually using a text editor.
+
+After the replacement, check that `pseudo_dir` correctly points to the `PSPOT` directory and that the required pseudopotential files exist there.
 
 ## Running calculations
 
@@ -101,3 +173,4 @@ Before running the calculations, check the following points:
 3. The `pseudo_dir` variable points to the correct `PSPOT` directory.
 4. The pseudopotential files specified in each QE input file exist in `PSPOT/`.
 5. The `README.md` and `run.sh` files in each exercise directory have been checked.
+6. If an exercise uses FermiSurfer or the Bader program, confirm that the corresponding executable is available in your environment.
