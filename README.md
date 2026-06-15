@@ -50,9 +50,9 @@ Please refer to these pages when you want to check the meaning of variables in `
 
 The following online tools are not actively used in the present hands-on exercises, but they are useful for preparing and checking first-principles calculations:
 
-```text
+
 https://www.materialscloud.org/work/tools
-```
+
 
 For example, Materials Cloud provides tools such as:
 
@@ -100,9 +100,9 @@ PSPOT/
 
 In the present hands-on examples, the pseudopotentials are mainly taken from the GBRV pseudopotential library:
 
-```text
+
 https://www.physics.rutgers.edu/gbrv/
-```
+
 
 The GBRV library provides pseudopotential files for Quantum ESPRESSO and was designed for accurate and computationally efficient high-throughput DFT calculations.
 
