@@ -50,9 +50,7 @@ Please refer to these pages when you want to check the meaning of variables in `
 
 The following online tools are not actively used in the present hands-on exercises, but they are useful for preparing and checking first-principles calculations:
 
-
 https://www.materialscloud.org/work/tools
-
 
 For example, Materials Cloud provides tools such as:
 
@@ -100,9 +98,7 @@ PSPOT/
 
 In the present hands-on examples, the pseudopotentials are mainly taken from the GBRV pseudopotential library:
 
-
 https://www.physics.rutgers.edu/gbrv/
-
 
 The GBRV library provides pseudopotential files for Quantum ESPRESSO and was designed for accurate and computationally efficient high-throughput DFT calculations.
 
@@ -190,6 +186,40 @@ The execution procedure depends on each exercise. In many cases, the calculation
 ./run.sh
 ```
 
+### Setting `QEBIN`
+
+In the `run.sh` scripts, commands are often written using the variable `$QEBIN`, for example:
+
+```bash
+$QEBIN/pw.x < pw_*.in > pw_*.out
+```
+
+Here, `QEBIN` should be set to the `bin` directory where the compiled Quantum ESPRESSO executables are located.
+
+For example:
+
+```bash
+QEBIN=/yourdir/qe-7.1/bin
+```
+
+or:
+
+```bash
+export QEBIN=/yourdir/qe-7.1/bin
+```
+
+In this case, the executables are assumed to be located as:
+
+```text
+/yourdir/qe-7.1/bin/pw.x
+/yourdir/qe-7.1/bin/pp.x
+/yourdir/qe-7.1/bin/projwfc.x
+```
+
+Please modify `/yourdir/qe-7.1/bin` according to your own installation path.
+
+### Running QE manually
+
 If you run QE manually, a typical command is:
 
 ```bash
@@ -198,15 +228,51 @@ $QEBIN/pw.x < pw_*.in > pw_*.out
 
 Here, `$QEBIN` should point to the directory containing the Quantum ESPRESSO executables.
 
+### Parallel execution
+
+If parallel execution is available in your environment, QE can be executed with MPI.
+
+For example:
+
+```bash
+mpirun -np 16 $QEBIN/pw.x < pw_*.in > pw_*.out
+```
+
+or, on a system using Slurm:
+
+```bash
+srun $QEBIN/pw.x < pw_*.in > pw_*.out
+```
+
+For calculations with many k points, k-point parallelization can be used by adding the `-nk` option.
+
+For example:
+
+```bash
+mpirun -np 16 $QEBIN/pw.x -nk 4 < pw_*.in > pw_*.out
+```
+
+or:
+
+```bash
+srun $QEBIN/pw.x -nk 4 < pw_*.in > pw_*.out
+```
+
+The `-nk` option specifies the number of k-point pools. This distributes k points over multiple pools and can improve parallel efficiency when the calculation contains many k points.
+
+The appropriate value of `-nk` depends on the number of MPI processes, the number of k points, and the computing environment. It should be chosen so that the parallel calculation remains efficient.
+
 ## Notes
 
 Before running the calculations, check the following points:
 
 1. Quantum ESPRESSO is available in your environment.
 2. `$QEBIN/pw.x`, `$QEBIN/pp.x`, and other required executables can be run.
-3. The `pseudo_dir` variable points to the correct `PSPOT` directory.
-4. The pseudopotential files specified in each QE input file exist in `PSPOT/`.
-5. The `README.md` and `run.sh` files in each exercise directory have been checked.
-6. If an exercise uses FermiSurfer or the Bader program, confirm that the corresponding executable is available in your environment.
-7. Materials Cloud online tools can be used as optional references for checking structures, QE inputs, and k-point paths.
-8. For research-level calculations, convergence with respect to pseudopotentials and cutoff energies should be tested.
+3. The `QEBIN` variable points to the correct `bin` directory of the Quantum ESPRESSO installation.
+4. The `pseudo_dir` variable points to the correct `PSPOT` directory.
+5. The pseudopotential files specified in each QE input file exist in `PSPOT/`.
+6. The `README.md` and `run.sh` files in each exercise directory have been checked.
+7. If an exercise uses FermiSurfer or the Bader program, confirm that the corresponding executable is available in your environment.
+8. Materials Cloud online tools can be used as optional references for checking structures, QE inputs, and k-point paths.
+9. For parallel calculations, consider using the `-nk` option when k-point parallelization is useful.
+10. For research-level calculations, convergence with respect to pseudopotentials and cutoff energies should be tested.
