@@ -72,6 +72,15 @@ STO_PBE/
 
 Before performing the Bader analysis, install the Bader charge analysis program.
 
+
+- Bader charge analysis program:
+  https://theory.cm.utexas.edu/bader/
+- Henkelman group Bader analysis page:
+  https://theory.cm.utexas.edu/henkelman/research/bader/
+
+The Bader program reads charge-density files, such as Gaussian CUBE files, and outputs the charge associated with each atom and the Bader volumes.
+
+
 For example, after installing the executable, it can be called as:
 
 ```bash
