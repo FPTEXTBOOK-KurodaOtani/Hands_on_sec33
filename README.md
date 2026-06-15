@@ -104,9 +104,7 @@ The GBRV library provides pseudopotential files for Quantum ESPRESSO and was des
 
 When choosing pseudopotentials for production calculations, it is important to check their accuracy and convergence behavior. A useful reference for pseudopotential validation is the SSSP efficiency table:
 
-```text
 https://legacy.materialscloud.org/discover/sssp/table/efficiency
-```
 
 The SSSP table provides benchmark information that is helpful when selecting pseudopotentials and cutoff energies.
 
