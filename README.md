@@ -46,6 +46,22 @@ The input variables for these programs are described in the official QE document
 
 Please refer to these pages when you want to check the meaning of variables in `pw_**.in`, post-processing input files, or projected-DOS input files.
 
+### Materials Cloud online tools
+
+The following online tools are not actively used in the present hands-on exercises, but they are useful for preparing and checking first-principles calculations:
+
+```text
+https://www.materialscloud.org/work/tools
+```
+
+For example, Materials Cloud provides tools such as:
+
+- a Quantum ESPRESSO input generator,
+- structure visualization tools,
+- SeeK-path for finding and visualizing high-symmetry k-point paths.
+
+These tools can be helpful when checking crystal structures, generating input files, or confirming the k-point path used for band-structure calculations.
+
 ### FermiSurfer
 
 Some exercises may use FermiSurfer to visualize Fermi surfaces.
@@ -81,6 +97,24 @@ The pseudopotential files used in this hands-on section are stored in:
 ```text
 PSPOT/
 ```
+
+In the present hands-on examples, the pseudopotentials are mainly taken from the GBRV pseudopotential library:
+
+```text
+https://www.physics.rutgers.edu/gbrv/
+```
+
+The GBRV library provides pseudopotential files for Quantum ESPRESSO and was designed for accurate and computationally efficient high-throughput DFT calculations.
+
+When choosing pseudopotentials for production calculations, it is important to check their accuracy and convergence behavior. A useful reference for pseudopotential validation is the SSSP efficiency table:
+
+```text
+https://legacy.materialscloud.org/discover/sssp/table/efficiency
+```
+
+The SSSP table provides benchmark information that is helpful when selecting pseudopotentials and cutoff energies.
+
+The pseudopotentials included in `PSPOT/` are prepared for this hands-on exercise. For research calculations, the pseudopotential choice and convergence with respect to cutoff energies should be checked carefully.
 
 In the QE input files, such as `pw_**.in`, the pseudopotential directory is specified by the variable `pseudo_dir`.
 
@@ -174,3 +208,5 @@ Before running the calculations, check the following points:
 4. The pseudopotential files specified in each QE input file exist in `PSPOT/`.
 5. The `README.md` and `run.sh` files in each exercise directory have been checked.
 6. If an exercise uses FermiSurfer or the Bader program, confirm that the corresponding executable is available in your environment.
+7. Materials Cloud online tools can be used as optional references for checking structures, QE inputs, and k-point paths.
+8. For research-level calculations, convergence with respect to pseudopotentials and cutoff energies should be tested.
