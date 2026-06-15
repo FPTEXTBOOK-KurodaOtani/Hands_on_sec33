@@ -6,6 +6,17 @@ The purpose of this hands-on section is to practice basic QE calculations and to
 
 For the detailed procedure of each exercise, please refer to the `README.md` file and `run.sh` script in each subdirectory.
 
+## Important notes and disclaimer
+
+Before running any calculation, please carefully check whether the computational cost of the input file is appropriate for the computational resources available to you.
+
+The required computational cost depends on the system size, cutoff energies, k-point mesh, number of bands, convergence criteria, and parallelization settings. Please make sure that the calculation is suitable for your computer, workstation, or supercomputer environment before execution.
+
+The input files and scripts in this repository are provided for educational and hands-on purposes. Although care has been taken in preparing them, we cannot take responsibility for any results, errors, losses, or problems caused by the use of these files.
+
+Users are responsible for checking the validity of the input files, calculation settings, convergence, numerical accuracy, and suitability for their own purpose.
+
+
 ## References and required programs
 
 Before running the calculations, please install Quantum ESPRESSO and prepare the external programs required for some exercises.
@@ -22,8 +33,12 @@ Useful references are:
   https://www.quantum-espresso.org/Doc/user_guide/node7.html
 - Quantum ESPRESSO installation FAQ:  
   https://www.quantum-espresso.org/faq/installation/
+- Quantum ESPRESSO source code on GitLab:  
+  https://gitlab.com/QEF/q-e
 
 The installation guide explains download, required libraries, CMake-based compilation, `make`-based compilation, MPI setup, BLAS/LAPACK, FFT libraries, and related build options.
+
+The Quantum ESPRESSO source code is also available from the GitLab repository above. This repository can be useful when obtaining the source code directly or checking the latest development version.
 
 ### Quantum ESPRESSO input-variable documentation
 
@@ -102,9 +117,20 @@ https://www.physics.rutgers.edu/gbrv/
 
 The GBRV library provides pseudopotential files for Quantum ESPRESSO and was designed for accurate and computationally efficient high-throughput DFT calculations.
 
+There are also other pseudopotential databases for Quantum ESPRESSO. One important example is PSLibrary:
+
+- Quantum ESPRESSO pseudopotential page and legacy tables:  
+  https://pseudopotentials.quantum-espresso.org/legacy_tables
+- PSLibrary web page:  
+  https://dalcorso.github.io/pslibrary/
+
+PSLibrary is a library for generating ultrasoft and PAW pseudopotentials for many elements using the `ld1.x` atomic code of Quantum ESPRESSO.
+
 When choosing pseudopotentials for production calculations, it is important to check their accuracy and convergence behavior. A useful reference for pseudopotential validation is the SSSP efficiency table:
 
+
 https://legacy.materialscloud.org/discover/sssp/table/efficiency
+
 
 The SSSP table provides benchmark information that is helpful when selecting pseudopotentials and cutoff energies.
 
