@@ -1,0 +1,54 @@
+&CONTROL
+ calculation = 'bands' 
+ prefix = 'scf' 
+ pseudo_dir = '/yourdir/PSPOT' 
+ outdir = './data' 
+ tprnfor = .true. 
+ disk_io = 'non' 
+/
+&SYSTEM
+ ibrav = 0 
+ ecutwfc = 40.0 
+ ecutrho = 400 
+ occupations = 'smearing' 
+ smearing = 'mp' 
+ degauss = 0.01 
+ nspin = 1 
+ ntyp = 2 
+ nat = 2 
+ nbnd= 24
+/
+&ELECTRONS
+ electron_maxstep = 200 
+ mixing_beta = 0.075 
+ conv_thr = 1e-08 
+/
+&IONS
+ ion_dynamics = 'bfgs' 
+ upscale = 1.0 
+/
+&CELL
+/
+/
+ 
+K_POINTS {crystal_b}
+5
+ 0.00  0.50  0.00  40 !L
+ 0.00  0.00  0.00  60 !G
+-0.50  0.00 -0.50  20 !X
+-0.375 0.00 -0.625 60 !K,U
+ 0.00  0.00 -1.00  40 !G
+
+ 
+ATOMIC_SPECIES
+Ga 69.7 ga_pbe_v1.4.uspp.F.UPF
+As 74.9 as_pbe_v1.uspp.F.UPF
+
+CELL_PARAMETERS {angstrom}
+0.00 2.875 2.875
+2.875 0.00  2.875
+2.875 2.875 0.00
+
+ATOMIC_POSITIONS {crystal}
+Ga 0.00000000 0.00000000 0.00000000
+As 0.25000000 0.25000000 0.25000000

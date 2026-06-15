@@ -1,0 +1,13 @@
+&inputpp
+    prefix  = 'SrTiO3'
+    outdir = './out'
+    filplot = 'SrTiO3_all'
+    plot_num= 21
+/
+&plot
+nfile = 1
+iflag = 3
+output_format = 6
+fileout = 'STO_all.cube'
+/
+

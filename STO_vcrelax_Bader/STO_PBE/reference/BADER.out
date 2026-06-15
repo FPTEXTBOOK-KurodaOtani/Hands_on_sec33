@@ -1,0 +1,39 @@
+
+  GRID BASED BADER ANALYSIS  (Version 1.05 08/19/23)
+
+  OPEN ... STO_valence.cube    
+  GAUSSIAN-STYLE INPUT FILE
+  DENSITY-GRID:   64 x  64 x  64
+  CLOSE ... STO_valence.cube    
+  RUN TIME:    0.06 SECONDS
+
+  OPEN ... STO_all.cube        
+  GAUSSIAN-STYLE INPUT FILE
+  DENSITY-GRID:   64 x  64 x  64
+  CLOSE ... STO_all.cube        
+  RUN TIME:    0.06 SECONDS
+
+  CALCULATING BADER CHARGE DISTRIBUTION
+                 0  10  25  50  75  100
+  PERCENT DONE:  ********************** 
+
+  REFINING AUTOMATICALLY
+  ITERATION: 1
+  EDGE POINTS:        161475
+  REASSIGNED POINTS:   17628
+
+  RUN TIME:       0.72 SECONDS
+
+  CALCULATING MINIMUM DISTANCES TO ATOMS
+                 0  10  25  50  75  100
+  PERCENT DONE:  **********************
+  RUN TIME:    0.04 SECONDS
+
+  WRITING BADER ATOMIC CHARGES TO ACF.dat
+  WRITING BADER VOLUME CHARGES TO BCF.dat
+
+  NUMBER OF BADER MAXIMA FOUND:            162
+      SIGNIFICANT MAXIMA FOUND:            162
+                 VACUUM CHARGE:         0.0000
+           NUMBER OF ELECTRONS:       40.00018
+ 

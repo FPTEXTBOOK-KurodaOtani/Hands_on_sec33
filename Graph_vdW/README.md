@@ -1,0 +1,190 @@
+# Graph_vdW
+
+This directory contains calculations for graphite to investigate the dependence of the total energy on the interlayer distance.
+
+The purpose is to compare the interlayer binding behavior of graphite using:
+
+- a standard GGA functional,
+- a van der Waals density functional.
+
+In particular, the vdW calculation uses:
+
+```python
+"input_dft": "vdW-DF2-B86R"
+```
+
+in the Quantum ESPRESSO input settings.
+
+## Purpose
+
+Graphite consists of weakly bonded graphene layers. Standard GGA functionals often fail to describe the interlayer binding accurately because the interlayer interaction is dominated by van der Waals forces.
+
+Therefore, this workflow compares the energy curve as a function of the graphite interlayer distance using GGA and a vdW functional.
+
+The main quantities checked are:
+
+1. the interlayer distance dependence of the total energy,
+2. the equilibrium interlayer distance,
+3. the difference between GGA and vdW results,
+4. the dissociation or interlayer interaction energy.
+
+## Input generation
+
+The Quantum ESPRESSO input files are generated using:
+
+```bash
+python gen_graphite_vdw.py
+```
+
+The script `gen_graphite_vdw.py` generates graphite structures with different interlayer distances.
+
+For each interlayer distance, a separate calculation directory is prepared. The c-axis lattice constant is changed according to the selected interlayer distance.
+
+For bulk graphite with two graphene layers in the unit cell, the relation is typically:
+
+```text
+c = 2 d
+```
+
+where:
+
+- `d` is the interlayer distance,
+- `c` is the lattice constant along the stacking direction.
+
+The interlayer distances are defined as a list in the Python script.
+
+## vdW functional setting
+
+For the vdW calculation, the exchange-correlation functional is specified in the ASE input-data dictionary as:
+
+```python
+"input_dft": "vdW-DF2-B86R"
+```
+
+This means that the Quantum ESPRESSO input file contains the corresponding `input_dft` setting in the `&SYSTEM` namelist.
+
+For example:
+
+```fortran
+&SYSTEM
+   input_dft = 'vdW-DF2-B86R'
+/
+```
+
+When using `vdW-DF2-B86R`, a separate empirical vdW correction such as `grimme-d3` should not be used at the same time.
+
+## Running the calculations
+
+The graphite calculations are executed using:
+
+```bash
+./rungraphite_c_scan.sh
+```
+
+This script runs the Quantum ESPRESSO calculations for all generated interlayer-distance directories.
+
+A typical calculation flow is:
+
+```bash
+python gen_graphite_vdw.py
+./rungraphite_c_scan.sh
+```
+
+Each calculation produces a `pw.out` file in the corresponding directory.
+
+## Energy analysis
+
+The calculated energies are analyzed using:
+
+```bash
+python get_Graphen_energies.py
+```
+
+This script reads the Quantum ESPRESSO output files, extracts the total energies, and evaluates the interlayer interaction or dissociation energy.
+
+The analysis should include both:
+
+- graphite calculations at different interlayer distances,
+- an isolated graphene calculation.
+
+## Interlayer interaction energy
+
+The interlayer interaction energy is calculated from the graphite total energy and the isolated graphene total energy.
+
+For a graphite unit cell containing two graphene layers, the interaction energy is defined as:
+
+```text
+Eint = Egraphite - 2 Egraphene
+```
+
+where:
+
+- `Egraphite` is the total energy of the graphite unit cell,
+- `Egraphene` is the total energy of an isolated graphene sheet calculated with the same in-plane lattice constant and the same exchange-correlation functional.
+
+With this definition, a stable bound graphite structure gives:
+
+```text
+Eint < 0
+```
+
+because the graphite structure is lower in energy than two isolated graphene sheets.
+
+```text
+Eint_per_C = Eint / 4
+```
+
+The minimum of the graphite energy curve, or the maximum of the positive dissociation energy, gives the equilibrium interlayer binding strength.
+
+## Comparison between GGA and vdW functional
+
+The GGA calculation and the vdW-functional calculation should be compared in terms of:
+
+1. equilibrium interlayer distance,
+2. depth of the binding-energy curve,
+3. dissociation energy,
+4. whether a clear energy minimum appears.
+
+A standard GGA functional may give a weak or inaccurate interlayer binding curve, while `vdW-DF2-B86R` is expected to describe the interlayer interaction more realistically.
+
+## Typical directory structure
+
+A typical directory structure is:
+
+```text
+Graph_vdW/
+├── gen_graphite_vdw.py
+├── rungraphite_c_scan.sh
+├── get_Graphen_energies.py
+├── graphite_c_scan/
+│   ├── graphene_iso/
+│   │   ├── pw.in
+│   │   └── pw.out
+│   ├── d_3p00A/
+│   │   ├── pw.in
+│   │   └── pw.out
+│   ├── d_3p20A/
+│   │   ├── pw.in
+│   │   └── pw.out
+│   ├── d_3p40A/
+│   │   ├── pw.in
+│   │   └── pw.out
+│   └── ...
+└── README.md
+```
+
+## Checklist
+
+Before discussing the final dissociation energy, check the following points:
+
+1. The graphite input files were generated by `gen_graphite_vdw.py`.
+2. The vdW calculation uses `input_dft = "vdW-DF2-B86R"`.
+3. The calculations were executed by `rungraphite_c_scan.sh`.
+4. All relevant `pw.out` files finished normally.
+5. The isolated graphene calculation was also performed.
+6. The energy analysis was performed by `get_Graphen_energies.py`.
+7. The dissociation energy was evaluated as:
+   ```text
+   Ediss = 2 Egraphene - Egraphite
+   ```
+8. The GGA and vdW energy curves were compared using the same structural convention and energy reference.

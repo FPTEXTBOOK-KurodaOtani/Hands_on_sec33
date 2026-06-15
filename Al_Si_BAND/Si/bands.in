@@ -1,0 +1,6 @@
+&bands
+    outdir = './data/' ,
+    prefix='scf' ,
+    filband='Si.band' ,
+    lsym=.true.
+ /

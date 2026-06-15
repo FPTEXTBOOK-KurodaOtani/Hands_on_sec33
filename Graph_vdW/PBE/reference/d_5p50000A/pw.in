@@ -1,0 +1,48 @@
+&CONTROL
+   calculation      = 'scf'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './tmp'
+   prefix           = 'graphite_d_5p50000'
+   disk_io          = 'low'
+   pseudo_dir       = '/home/k0750/k075000/PSPOT/'
+/
+&SYSTEM
+   ecutwfc          = 40.0
+   ecutrho          = 400.0
+   occupations      = 'smearing'
+   degauss          = 0.01
+   smearing         = 'mv'
+   ntyp             = 1
+   nat              = 4
+   ibrav            = 0
+/
+&ELECTRONS
+   conv_thr         = 1e-08
+   mixing_beta      = 0.3
+/
+&IONS
+/
+&CELL
+/
+&FCP
+/
+&RISM
+/
+ATOMIC_SPECIES
+C 12.011 c_pbe_v1.2.uspp.F.UPF
+
+K_POINTS automatic
+12 12 8  0 0 0
+
+CELL_PARAMETERS angstrom
+2.46772000000000 0.00000000000000 0.00000000000000
+-1.23386000000000 2.13710820942693 0.00000000000000
+0.00000000000000 0.00000000000000 11.00000000000000
+
+ATOMIC_POSITIONS crystal
+C 0.0000000000 0.0000000000 0.7500000000  
+C 0.0000000000 0.0000000000 0.2500000000  
+C 0.3333300000 0.6666700000 0.7500000000  
+C 0.6666700000 0.3333300000 0.2500000000  
+

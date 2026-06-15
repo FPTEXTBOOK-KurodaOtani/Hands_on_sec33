@@ -103,6 +103,19 @@ Li.bands.dat.gnu
 
 This file can be used directly for band plotting.
 It can be plotted by using band_plot.py.
+High-symmetry kpoints are shown in 
+bands.out.
+
+```text
+     Reading collected, re-writing distributed wavefunctions
+     high-symmetry point:  0.4330 0.4330 0.4330   x coordinate   0.0000
+     high-symmetry point:  0.0000 0.0000 0.0000   x coordinate   0.7500
+     high-symmetry point:  0.4330 0.0000 0.4330   x coordinate   1.3624
+     high-symmetry point:  0.8660 0.0000 0.0000   x coordinate   1.9747
+     high-symmetry point:  0.0000 0.0000 0.0000   x coordinate   2.8408
+```
+
+You can use x coordinate length to plot their bands.
 
 ## Fermi Surface Plot with FermiSurfer
 

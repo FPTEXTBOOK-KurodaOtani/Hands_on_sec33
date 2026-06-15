@@ -111,8 +111,8 @@ pw_O2.out
 The total energies can be extracted from the output files using:
 
 ```bash
-grep "!    total energy" pw_O.out
-grep "!    total energy" pw_O2.out
+grep "!" pw_O.out
+grep "!" pw_O2.out
 ```
 
 The dissociation energy can then be calculated as:

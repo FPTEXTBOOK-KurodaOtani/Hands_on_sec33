@@ -172,13 +172,13 @@ Quantum ESPRESSO with ESM produces potential-profile files with names that inclu
 For example, if the prefix is:
 
 ```text
-Al6
+Al4
 ```
 
 then the corresponding ESM potential-profile file should be searched in the output directory, typically under `tmp/`, with a name containing:
 
 ```text
-Al6.esm1
+Al4.esm1
 ```
 
 The potential profile in this file should be checked to confirm that the vacuum level is properly aligned and that the slab region and vacuum region are well separated.

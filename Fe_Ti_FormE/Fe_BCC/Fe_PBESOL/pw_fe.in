@@ -1,0 +1,51 @@
+&CONTROL
+   calculation      = 'vc-relax',
+   prefix           = 'Fe_bcc_fm',
+   outdir           = './out',
+   pseudo_dir       = '/yourdir/PSPOT',
+   tstress          = .true.,
+   tprnfor          = .true.,
+/
+
+&SYSTEM
+   ibrav            = 0,
+   nat              = 2,
+   ntyp             = 1,
+   ecutwfc          = 70,
+   ecutrho          = 700,
+   occupations      = 'smearing',
+   smearing         = 'mp',
+   degauss          = 0.01,
+   nspin            = 2,
+   starting_magnetization(1) = 2.0,
+   starting_magnetization(2) = 2.0,
+/
+
+&ELECTRONS
+   electron_maxstep = 200,
+   conv_thr         = 1.0d-8,
+   mixing_beta      = 0.7,
+/
+
+&IONS
+   ion_dynamics     = 'bfgs',
+/
+
+&CELL
+/
+
+CELL_PARAMETERS angstrom
+   2.866000   0.000000   0.000000
+   0.000000   2.866000   0.000000
+   0.000000   0.000000   2.866000
+
+ATOMIC_SPECIES
+   Fe 55.845  fe_pbesol_v1.5.uspp.F.UPF
+
+ATOMIC_POSITIONS crystal
+   Fe   0.000000   0.000000   0.000000
+   Fe   0.500000   0.500000   0.500000
+
+K_POINTS automatic
+   12 12 12  0 0 0
+

@@ -1,0 +1,5 @@
+&projwfc
+  outdir = './data/'
+  prefix = 'FeO'
+  DeltaE = 0.01
+/
