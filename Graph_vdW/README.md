@@ -30,6 +30,9 @@ The main quantities checked are:
 
 ## Input generation
 
+Here, we use the Atomic Simulation Environment (ASE) package to generate Quantum ESPRESSO input files.
+A detailed description of ASE is provided in Hands_on_sec32/ASE.
+
 The Quantum ESPRESSO input files are generated using:
 
 ```bash

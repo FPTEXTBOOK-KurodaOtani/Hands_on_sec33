@@ -36,6 +36,9 @@ when `Vvac = 0`.
 
 ## Slab generation
 
+Here, we use the Atomic Simulation Environment (ASE) package to generate Quantum ESPRESSO input files.
+A detailed description of ASE is provided in Hands_on_sec32/ASE.
+
 The Al slab structure is generated using ASE in `gen_Al_slab.py`.
 
 The script constructs an Al(111) slab using `ase.build.fcc111`, adds vacuum along the surface-normal direction, centers the slab, and writes the Quantum ESPRESSO input file.
